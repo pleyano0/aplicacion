@@ -1,0 +1,20 @@
+Crear aplicación lo más completa posible:
+
+3 usuarios
+
+- anónimo: 
+	- Acceso a la página principal (registrarse, inicio de sesion)
+	- Otra página en la que mostramos los pilotos y clasificación
+	- Página para equipos y clasificación
+	- Acerca de...
+- registrado
+	- Lo mismo que usuario anónimo
+	- Gestión de membresía (cambio de contraseña, correo electrónico...)
+	- Tiene acceso a la ficha de datos del piloto e impresión en PDF
+	- Ver un resumen de las carreras y la puntuación y clasifación de cada piloto e impresión en PDF
+- administrador
+	- CMS
+	- Gestión de pilotos
+	- Añadir datos de carreras
+	- Subir imágenes y asociarlas con pilotos
+
