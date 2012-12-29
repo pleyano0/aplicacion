@@ -14,6 +14,9 @@ function imprimir_equipo($numero, $nombre, $p1, $p2, $foto, $logo) {
 	return "\n<div class='equip'><div class='bloque'><a href='equipo.php?n=$numero'><img src='images/tlogo/$logo' /></a><a href='equipo.php?n=$numero'>$nombre</a></div><a href='equipo.php?n=$numero'><img src='images/fcarne/$p1' class='p_equipo' /></a><a href='equipo.php?n=$numero'><img src='images/fcarne/$p2' class='p_equipo' /></a><a href='equipo.php?n=$numero'><img src='$p2' class='p_equipo' /></a><a href='equipo.php?n=$numero'><img src='images/efoto/$foto' class='p_equipo' /></a></div>";
 }
 
+function imprimir_equipo_clasificacion($clave, $clasif, $nombre, $puntos) {
+	return "<li><a href='equipo.php?n=$clave'><span class='clasif1'>$clasif</span><span class='clasif2'>$nombre</span><span class='clasif3'>$puntos</span></a></li>";	
+}
 
 function imprimir_piloto_personal($numPiloto, $nombre, $fNacimiento, $nacionalidad, $gpDisputados, $puntosConseguidos, $campeonatos, $puntosActuales, $nombreEquipo, $fPersonal) {
 	
@@ -51,6 +54,37 @@ function imprimir_piloto_personal($numPiloto, $nombre, $fNacimiento, $nacionalid
          </table>
         </td>
         <td id="col_img"> <img src="<?php echo $fPersonal; ?>" /><a href="javascript:;" id="piloto_btn"><?php echo $nombre; ?></a></td>
+        </tr>
+    </table>
+    
+    <?php ;
+	
+	return $retorno;
+	
+}
+
+
+function imprimir_equipo_personal($numEquipo, $nombre, $fundacion, $campeonatos, $coche, $puntos) {
+	
+	$retorno = ''?>
+    <table id="t_piloto">
+    	<tr><td>
+    	<table>
+            <tr>
+                <td colspan="2"><h2><?php echo $nombre; ?></h2></td>
+            </tr>
+            <tr>
+                <td>Fundacion</td><td><?php echo $fundacion; ?></td>
+            </tr>
+            <tr>
+                <td>Campeonatos</td><td><?php echo $campeonatos; ?></td>
+            </tr>
+            <tr>
+                <td>Puntos conseguidos</td><td><?php echo $puntos ?></td>
+            </tr>
+         </table>
+        </td>
+        <td id="col_img"> <img src="<?php echo $coche; ?>" /><a href="javascript:;" id="equipo_btn"><?php echo $nombre; ?></a></td>
         </tr>
     </table>
     
@@ -113,7 +147,14 @@ function sqlWriter($sentencia)
 function autenticado() {
 	if (!isset($_SESSION))
 		session_start();
-	return isset($_SESSION['rol']) ? true : false;
+	return isset($_SESSION['rol']);
+	
+}
+
+function superusuario() {
+	if (!isset($_SESSION))
+		session_start();
+	return (isset($_SESSION['rol']) && $_SESSION['rol'] == 'a');
 	
 }
 

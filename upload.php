@@ -6,7 +6,6 @@ if (!autenticado()) {
 
 if (isset($_FILES['fichero'])) {
 	if ($_FILES['fichero']['error'] > 0) {
-		echo "Error: ".$_FILES['fichero']['error'];
 	} else {
 		$carpeta = "uploads/avatars/". $_FILES['fichero']['name'];
 		move_uploaded_file($_FILES['fichero']['tmp_name'], $carpeta );

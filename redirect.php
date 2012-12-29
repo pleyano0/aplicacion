@@ -37,6 +37,9 @@ include("header.php");
 		case '1':
 		echo "<h2>Usuario o contraseña incorrectos</h2>";
 		break;
+		case '3':
+		echo "<h2>Necesitas ser administrador para acceder</h2>";
+		break;
 	}
 else: ?>
 <h2>Necesitas estar autenticado para acceder a esta paǵina.</h2>

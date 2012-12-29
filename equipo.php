@@ -1,7 +1,7 @@
 <?php
 include_once("funciones.php");
 if (!autenticado()) {
-	header("Location: redirect.php?src=piloto.php" . (isset($_GET['n']) ? "?n=" . $_GET['n'] : ""));
+	header("Location: redirect.php?src=equipo.php" . (isset($_GET['n']) ? "?n=" . $_GET['n'] : ""));
 } else {
 ?>
 
@@ -35,12 +35,12 @@ if (servidor) {
 	}
 } else {
 	# TRABAJANDO SIN SERVIDOR
-	echo imprimir_piloto_personal(1, "Sebastian Vettel", "12/10/1980", "Alemán", 499, 6168, 3, 419, "Red Bull", "images/fpersonal/fp01.jpg");
+	echo imprimir_equipo_personal(4, "Red Bull", "05/11/1956", 50, "images/tfoto/t05.jpg", 400);
 }
 ?>
 </div>
 <?php
-include("lateral.php");
+include("lateral_equipo.php");
 ?>
 </div>
 <?php

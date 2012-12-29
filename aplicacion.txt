@@ -22,10 +22,15 @@ TO-DO:
 
 - registrado
 	- Gestión de membresía (cambio de contraseña, correo electrónico...)
-	- impresión en PDF del piloto (ya no lo voy a hacer)
+	- impresión en PDF del piloto
 	- Ver un resumen de las carreras y la puntuación y clasifación de cada piloto e impresión en PDF
 - administrador
 	- CMS
 	- Gestión de pilotos
 	- Añadir datos de carreras
 	- Subir imágenes y asociarlas con pilotos
+- validación
+	- Tamaño / Dimensiones / Formato avatar
+	- Formulario de registro / login
+- otros
+	- Detalle de equipos con conexión a base de datos

@@ -65,7 +65,7 @@ Nuestros sitio están desarrollados por Eduardo Páez (de aquí en adelante "ell
 Acuerda no enviar ningun contenido abusivo, obsceno, vulgar, difamatorio, indecente, amenazante, sexual o cualquier otro material que pueda violar cualquier ley de su país, el país donde "sudominio.com" está instalado o Leyes Internacionales. Hacer eso provocará que sea inmediata y permanentemente expulsado y, si lo creemos oportuno, con notificación a su Proveedor de Servicios de Internet. Las direcciones IP de todos los envíos son registradas como ayuda para reforzar estas condiciones. Acuerda que "sudominio.com" tiene derecho a eliminar, editar, mover o cerrar cualquier tema en cualquier momento que lo creamos conveniente. Como usuario acuerda que cualquier información que haya ingresado será almacenada en una base de datos. Dado que esta información no será compartida con ninguna tercera parte sin su consentimiento, ni "sudominio.com" ni Eduardo podrán considerarse responsables por cualquier intento de hacking que conlleve a que los datos sean comprometidos.
 </p>
 </div>
-<div id="div_enviar"><input type="submit" value="Estoy de acuerdo y deseo continuar" name="input_reg"/><input type="button" value="No estoy de acuerdo" /></div>
+<div id="div_enviar"><input type="submit" value="Estoy de acuerdo y deseo continuar" name="input_reg"/><input type="button" value="No estoy de acuerdo" onClick="window.location = './'"/></div>
 </form>
 <?php else: ?>
 <?php

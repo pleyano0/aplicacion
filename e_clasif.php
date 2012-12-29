@@ -35,13 +35,13 @@ if (servidor) {
 	# TRABAJANDO SIN SERVIDOR
 
 	for ($i = 1; $i <= 5; $i++) {
-		echo imprimir_equipo(1, "Red Bull", "fc".str_pad($i, 2, "0", STR_PAD_LEFT).".jpg", "fc".str_pad($i, 2, "0", STR_PAD_LEFT).".jpg", 't01_l.jpg', 't01_l.jpg');
+		echo imprimir_equipo($i, "Red Bull", "fc".str_pad($i, 2, "0", STR_PAD_LEFT).".jpg", "fc".str_pad($i, 2, "0", STR_PAD_LEFT).".jpg", 't01_l.jpg', 't01_l.jpg');
 	}
 }
 ?> 
 </div>
 <?php
-include("lateral.php");
+include("lateral_equipo.php");
 ?>
 </div>
 <?php
