@@ -24,7 +24,7 @@
 			</form>
 			<span><a href="registro.php">Registrarse</a></span>
 			<?php else: ?>
-			<span>Bienvenido, <?php echo $_SESSION['user']; ?>. <a href="logout.php">Salir</a></span>
+			<span>Bienvenido, <a href="perfil.php" style="font-size: 1em;"><?php echo $_SESSION['user']; ?></a>. <a href="logout.php">Salir</a></span>
 			<?php endif; ?>
 		</div>
 

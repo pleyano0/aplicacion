@@ -46,7 +46,7 @@ document.write("<option value='"+array_provincias[i]+"'>"+array_provincias[i]+"<
 </script>
 </select>
 </div>
-<div class="form_input"><label>Sexo: </label><input type="radio" value="1" name="sexo" /> H <input type="radio" value="2" name="sexo" /> M</div>
+<div class="form_input"><label>Sexo: </label><input type="radio" value="H" name="sexo" /> H <input type="radio" value="M" name="sexo" /> M</div>
 
 
 </div>
@@ -70,14 +70,13 @@ Acuerda no enviar ningun contenido abusivo, obsceno, vulgar, difamatorio, indece
 <?php else: ?>
 <?php
 
-$error = insertar_usuario($_POST['username'], $_POST['password1'], $_POST['password2'], $_POST['email'], $_POST['select_prov'], $_POST['sexo']);
-echo $error;
+$error = insertar_usuario($_POST['username'], md5($_POST['password1']), md5($_POST['password2']), $_POST['email'], $_POST['select_prov'], $_POST['sexo'], "uploads/avatars/lol.jpg");
 
 ?>
 <script> window.setTimeout(function() {window.location = "redirect.php?errcode=0"}, 5000) </script>
 <div id="redirect">
 <h2>Registro completo</h2>
-<p>Click <a href="#">aquí</a> si no eres redirigido en 5 segundos</p>
+<p>Click <a href="index.php">aquí</a> si no eres redirigido en 5 segundos</p>
 </div>
 <?php endif; ?>
 </div>

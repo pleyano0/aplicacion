@@ -41,7 +41,7 @@ include("header.php");
 else: ?>
 <h2>Necesitas estar autenticado para acceder a esta paǵina.</h2>
 <?php endif; ?>
-<form action="login.php?src=piloto.php" method="post">
+<form action="login.php<?php echo (isset($_GET['src'])) ? "?src=".$_GET['src'] : "" ?>" method="post">
 <label for="username1">Nombre de usuario:</label><input type="text" name="user_id" id="username1" />
 <label for="password1">Contraseña:</label><input type="password" name="user_pass" id="password1" />
 <input type="submit" value="Entrar" name="btn_submit" />

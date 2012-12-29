@@ -44,7 +44,7 @@ body {margin: 0; padding: 0;background: url(images/back.jpg) center top no-repea
 
 #menu ul { margin: 0; padding: 0 ; height: 35px; background: url(images/menu_bg.jpg);}
 #menu ul li { float: left; list-style-type: none;}
-#menu ul li a {display: block; line-height: 35px; padding: 0 20px; color: white; background-image: url(images/menu_bg.jpg); background-position: 0 0; transition: background-position .5s; -webkit-transition: background-position .5s; }
+#menu ul li a {display: block; line-height: 35px; font-size: 0.94em; padding: 0 20px; color: white; background-image: url(images/menu_bg.jpg); background-position: 0 0; transition: background-position .5s; -webkit-transition: background-position .5s; }
 #menu ul li a:hover {background-position: 0 -35px; color: red; transition: all .5s; -webkit-transition: .5s; }
 
 
@@ -75,13 +75,21 @@ body {margin: 0; padding: 0;background: url(images/back.jpg) center top no-repea
 #register #legal_header {font-weight: bold; line-height: 55px; clear: left; display: block;}
 #register .form_der, #register .form_izq {float: left; box-sizing: border-box; width: 50%;}
 #register #div_enviar { text-align: center; padding: 15px 0; }
-#register #div_enviar input { cursor: pointer; line-height: 35px; padding: 0 20px; color: white; background-image: url(images/menu_bg.jpg); background-position: 0 0; border: 1px solid white; }
+#register #div_enviar input { cursor: pointer; margin: 0 5px; display: inline-block; padding: 10px 20px; color: white; background-image: url(images/menu_bg.jpg); background-position: 0 0; border: 1px solid white; }
 #register #div_enviar input:hover {color: red; }
 
 #redirect { text-align: center; padding-bottom: 40px;}
 #redirect input {display: block; margin: 5px auto; width: 200px; }
 #redirect input[type="submit"] {width: auto; }
 #redirect a { color: red; }
+
+#perfil_contenido {padding: 10px; overflow: auto;}
+#perfil_contenido h2 {text-align: center;}
+#perfil_contenido #foto {display: block; float: right; width: 300px; }
+#perfil_contenido #datos {float: left; width: 635px; }
+#perfil_contenido #avatar { float: left;  width: 150px; display: block; text-align: center;}
+#perfil_contenido #avatar img {width: 100%;border: 5px solid white; border-radius: 10px; }
+#perfil_contenido ul {float: left; list-style-type: disc; margin-left: 40px; }
 
 ul.bjqs{position:relative; list-style:none;padding:0;margin:0;overflow:hidden; display:none;}
 li.bjqs-slide{position:absolute; display:none;}

@@ -118,7 +118,7 @@ function autenticado() {
 }
 
 function login($usuario, $contrasena) {
-	
+	$contrasena = md5($contrasena);
 	$lector = sqlReader("select rol, nombre_usuario from usuarios where nombre_usuario = '$usuario' and contrasena = '$contrasena'");
 	if (sizeof($lector) > 0) {
 		$_SESSION['rol'] = $lector[0]['rol'];
@@ -130,7 +130,7 @@ function login($usuario, $contrasena) {
 	
 }
 
-function insertar_usuario($nombre, $pass1, $pass2, $email, $provincia, $sexo) {
+function insertar_usuario($nombre, $pass1, $pass2, $email, $provincia, $sexo, $avatar) {
 	
 	$error = 0;
 	$existe = sqlReader("select nombre_usuario from usuarios where nombre_usuario = '$nombre'");
@@ -138,12 +138,8 @@ function insertar_usuario($nombre, $pass1, $pass2, $email, $provincia, $sexo) {
 		$error = 1;
 	elseif ($pass1 != $pass2)
 		$error = 2;
-	
 	if ($error == 0) {
-
-		sqlWriter("insert into usuarios values (default, '$nombre', '$pass1', '$email', 'r', '$provincia', '$sexo')");
-		echo "asdasdasd";
-
+		sqlWriter("insert into usuarios values (default, '$nombre', '$pass1', '$email', 'r', '$provincia', '$sexo', '$avatar')");
 	}
 
 	return $error;
