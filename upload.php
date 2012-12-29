@@ -23,6 +23,7 @@ if (isset($_FILES['fichero'])) {
 </head>
 
 <body>
+<script>window.opener.document.getElementById('avatar').getElementsByTagName('img')[0].src="<?php echo $carpeta; ?>";</script>
 <script type="text/javascript">window.close();</script>
 </body>
 </html>
