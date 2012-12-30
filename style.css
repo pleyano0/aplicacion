@@ -12,7 +12,7 @@ body {margin: 0; padding: 0;background: url(images/back.jpg) center top no-repea
 #login span a {font-size: 0.9em;}
 #login span a:hover {text-decoration: underline;}
 
-#contenido, #admin_contenido {width: 695px;	padding: 10px;	float: left;}
+#contenido {width: 695px;	padding: 10px;	float: left;}
 #lateral {	width: 235px;	margin: 12px 5px 0 0;	float: right;}
 
 .pilot {display: inline-block; margin: 2px; padding: 2px 5px; background: #EFEFEF; font-size: 0.8em;}
@@ -94,6 +94,12 @@ body {margin: 0; padding: 0;background: url(images/back.jpg) center top no-repea
 
 #subir { text-align: center; display: block; width: 100%;}
 #subir img { display: block; width: 150px; height: 150px; background: white; margin: 30px auto; border: 5px solid white; border-radius: 10px; }
+
+#admin_contenido {overflow-x: hidden; padding: 20px; }
+#admin_menu {width: 200px; float: left; padding: 20px; background: white; border-radius: 20px;}
+#admin_panel {float: left; margin-left: 20px; padding: 20px; background: white; border-radius: 20px; width: 625px; line-height: 30px;}
+#admin_menu ul li {padding-left: 20px;}
+.admin_insert, .admin_edit {padding-left: 0 !important; line-height: 30px; padding-top: 5px;}
 
 ul.bjqs{position:relative; list-style:none;padding:0;margin:0;overflow:hidden; display:none;}
 li.bjqs-slide{position:absolute; display:none;}

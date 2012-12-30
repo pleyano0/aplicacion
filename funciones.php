@@ -139,6 +139,7 @@ function sqlWriter($sentencia)
 	}
 	catch (Exception $ex)
 	{
+		echo $ex;
 		$lector=null;
 	}
 	$miCnx=null;

@@ -13,6 +13,18 @@ switch ($_GET['action']) {
 		$provincia = $_GET['provincia'];
 		$datos = sqlWriter("update usuarios set email = '$email', sexo = '$sexo', provincia = '$provincia' where nombre_usuario = '$user'");
 		break;
+	case 'insertar_usuario':
+		$user = $_GET['usuario'];
+		$email = $_GET['email'];
+		$sexo = $_GET['sexo'];
+		$provincia = $_GET['provincia'];
+		$contrasena = md5($_GET['contrasena']);
+		$rol = $_GET['rol'];
+		$sexo = $_GET['sexo'];
+		$avatar = $_GET['avatar'];
+		print_r($_GET);
+		$datos = sqlWriter("insert into usuarios values (default, '$user', '$contrasena', '$email', '$rol', '$provincia', '$sexo', '$avatar')");
+		break;
 }
 
 ?>
