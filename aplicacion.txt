@@ -18,3 +18,16 @@ Crear aplicación lo más completa posible:
 	- Añadir datos de carreras
 	- Subir imágenes y asociarlas con pilotos
 
+TO-DO:
+
+- anónimo:
+	- Página para equipos y clasificación
+- registrado
+	- Gestión de membresía (cambio de contraseña, correo electrónico...)
+	- impresión en PDF del piloto
+	- Ver un resumen de las carreras y la puntuación y clasifación de cada piloto e impresión en PDF
+- administrador
+	- CMS
+	- Gestión de pilotos
+	- Añadir datos de carreras
+	- Subir imágenes y asociarlas con pilotos
