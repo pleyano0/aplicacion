@@ -20,8 +20,6 @@ Crear aplicación lo más completa posible:
 
 TO-DO:
 
-- anónimo:
-	- Página para equipos y clasificación
 - registrado
 	- Gestión de membresía (cambio de contraseña, correo electrónico...)
 	- impresión en PDF del piloto
