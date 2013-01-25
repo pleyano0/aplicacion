@@ -42,9 +42,9 @@ body {margin: 0; padding: 0;background: url(images/back.jpg) center top no-repea
 #lateral .elemento a{display: block; background: url(images/elem_bg.jpg) -20px 0; line-height: 35px; margin-bottom: 5px; padding-left: 10px; color: red; text-decoration: none; font-size: 0.9em;}
 #lateral .elemento a:hover{background: url(images/elem_bg.jpg) -20px -35px;}
 
-#menu ul { margin: 0; padding: 0 ; height: 35px; background: url(images/menu_bg.jpg);}
+#menu ul { margin: 0; padding: 0; height: 35px; background: url(images/menu_bg.jpg);}
 #menu ul li { float: left; list-style-type: none;}
-#menu ul li a {display: block; line-height: 35px; font-size: 0.94em; padding: 0 20px; color: white; background-image: url(images/menu_bg.jpg); background-position: 0 0; transition: background-position .5s; -webkit-transition: background-position .5s; }
+#menu ul li a {display: block; line-height: 35px; font-size: 0.8em; padding: 0 20px; color: white; background-image: url(images/menu_bg.jpg); background-position: 0 0; transition: background-position .5s; -webkit-transition: background-position .5s; }
 #menu ul li a:hover {background-position: 0 -35px; color: red; transition: all .5s; -webkit-transition: .5s; }
 
 
@@ -90,6 +90,9 @@ body {margin: 0; padding: 0;background: url(images/back.jpg) center top no-repea
 #perfil_contenido #avatar { float: left;  width: 150px; display: block; text-align: center;}
 #perfil_contenido #avatar img {width: 100%;border: 5px solid white; border-radius: 10px; }
 #perfil_contenido ul {float: left; list-style-type: disc; margin-left: 40px; }
+
+#subir { text-align: center; display: block; width: 100%;}
+#subir img { display: block; width: 150px; height: 150px; margin: 30px auto; border: 5px solid white; border-radius: 10px; }
 
 ul.bjqs{position:relative; list-style:none;padding:0;margin:0;overflow:hidden; display:none;}
 li.bjqs-slide{position:absolute; display:none;}

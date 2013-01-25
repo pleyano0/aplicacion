@@ -18,7 +18,7 @@ $usuario = sqlReader("select * from usuarios where nombre_usuario = '".$_SESSION
 
 function cambiar_avatar() {
 	
-	window.open("upload.php", "Cambiar avatar", "width=400,height=400");
+	window.open("upload.php", "Cambiar avatar", "width=400,height=300");
 	
 }
 
@@ -36,7 +36,7 @@ include("header.php");
 <div id="perfil_contenido">
 <div id="datos">
 <h2><?php echo $usuario[0]['nombre_usuario']; ?></h2>
-<div id="avatar"><img src="<?php echo $usuario[0]['avatar']; ?>" alt="avatar" /><a href="javascript:cambiar_avatar();">Cambiar avatar</a></div>
+<div id="avatar"><img src="<?php echo $usuario[0]['avatar']; ?>" alt="avatar" /><br /><a href="javascript:cambiar_avatar();">Cambiar avatar</a></div>
 <ul>
 <li><b>Email: </b><?php echo $usuario[0]['email']; ?></li>
 <li><b>Provincia: </b><?php echo $usuario[0]['provincia']; ?></li>
