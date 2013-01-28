@@ -1,6 +1,6 @@
 <?php
 
-define("servidor", false);
+define("servidor", true);
 
 function imprimir_piloto($foto, $numero, $nombre, $equipo) {
 	return "<div class='pilot'><div class='bloque'><a href='piloto.php?n=$numero'><img src='$foto' /></a><br /><a href='piloto.php?n=$numero'>$nombre</a> <br />$equipo</div></div>";
