@@ -1,7 +1,7 @@
 <?php
 include_once("funciones.php");
 if (!superusuario()) {
-	header("Location: redirect.php");
+	header("Location: redirect.php?src=admin.php&errcode=3");
 } else {
 ?>
 
@@ -12,19 +12,7 @@ if (!superusuario()) {
 <title>Untitled Document</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 <script src="js/ajax.js"></script>
-<script type="text/javascript">
-function mostrar(ndiv) {
 
-	var elementos = document.getElementById("admin_panel").getElementsByTagName("div");
-	for (var i = 0; i < elementos.length; i++) {
-
-		elementos[i].style.display = 'none';	
-
-	}
-	document.getElementById(ndiv).style.display = "block";
-
-}
-</script>
 </head>
 
 <body>
@@ -39,15 +27,15 @@ include("header.php");
 <div id="admin_menu">
 <ul>
 	<li class="admin_insert">Inserciones:</li>
-	<li><a href="javascript:;" onclick="mostrar('')">Carrera</a></li>
-	<li><a href="javascript:;" onclick="mostrar('insertar_usuario')">Usuario</a></li>
-	<li><a href="javascript:;">Piloto</a></li>
-	<li><a href="javascript:;">Equipo</a></li>
+	<li>Carrera</li>
+	<li>Usuario</li>
+	<li>Piloto</li>
+	<li>Equipo</li>
     <li class="admin_edit">Ediciones:</li>
-	<li><a href="javascript:;">Carrera</a></li>
-	<li><a href="javascript:;"onclick="mostrar('modificar_usuario')">Usuario</a></li>
-	<li><a href="javascript:;">Piloto</a></li>
-	<li><a href="javascript:;">Equipo</a></li>
+	<li>Carrera</li>
+	<li>Usuario</li>
+	<li>Piloto</li>
+	<li>Equipo</li>
 </ul>
 </div>
 <div id="admin_panel">
