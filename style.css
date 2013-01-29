@@ -93,6 +93,7 @@ body {margin: 0; padding: 0;background: url(images/back.jpg) center top no-repea
 #perfil_contenido #avatar { float: left;  width: 150px; display: block; text-align: center;}
 #perfil_contenido #avatar img {width: 100%;border: 5px solid white; border-radius: 10px; }
 #perfil_contenido ul {float: left; list-style-type: disc; margin-left: 40px; }
+.perfil_buttons {clear: left; margin: 150px auto 0; text-align: center; width: 200px; display: block;}
 
 #subir { text-align: center; display: block; width: 100%;}
 #subir img { display: block; width: 150px; height: 150px; background: white; margin: 30px auto; border: 5px solid white; border-radius: 10px; }

@@ -1,6 +1,7 @@
 <?php
 
 define("servidor", true);
+define("driver", "sqlserver");
 
 function imprimir_piloto($foto, $numero, $nombre, $equipo) {
 	return "<div class='pilot'><div class='bloque'><a href='piloto.php?n=$numero'><img src='$foto' /></a><br /><a href='piloto.php?n=$numero'>$nombre</a> <br />$equipo</div></div>";
@@ -218,8 +219,7 @@ function conectar($server,$db)
 {
     try 
     {
-		$Cnx = new PDO("sqlsrv:server=$server ; Database=$db");
-      //  $Cnx = new PDO('mysql:host='.$server.';dbname='.$db, 'root', 'toor');
+		if (driver == "sqlserver") $Cnx = new PDO("sqlsrv:server=$server ; Database=$db"); else $Cnx = new PDO('mysql:host='.$server.';dbname='.$db, 'root', 'toor');
         return($Cnx);
     } 
     catch (PDOException $ex) 
@@ -234,8 +234,7 @@ function sqlReader($sentencia)
 	$lector;
 	try
 	{	
-		$miCnx=conectar("(local)","MundialF1"); // MICNX = TIPO PDO
-		//$miCnx=conectar("127.0.0.1","MundialF1"); // MICNX = TIPO PDO
+		if (driver == "sqlserver") $miCnx=conectar("(local)","MundialF1"); else $miCnx=conectar("127.0.0.1","MundialF1");
 		$lector=$miCnx->query($sentencia);
 		if ($lector) $lector = $lector->fetchAll();
 	}
@@ -252,8 +251,7 @@ function sqlWriter($sentencia)
 	$lector;
 	try
 	{	
-	$miCnx=conectar("(local)","MundialF1"); // MICNX = TIPO PDO
-	//		$miCnx=conectar("127.0.0.1","MundialF1"); // MICNX = TIPO PDO
+		if (driver == "sqlserver") $miCnx=conectar("(local)","MundialF1"); else $miCnx=conectar("127.0.0.1","MundialF1");
 		$lector=$miCnx->prepare($sentencia);
 		$lector->execute();
 	}
@@ -305,6 +303,13 @@ function insertar_usuario($nombre, $pass1, $pass2, $email, $provincia, $sexo, $a
 	}
 
 	return $error;
+
+}
+
+function actualizar_usuario($id, $nombre, $provincia, $email) {
+	sqlWriter("update usuarios set nombre_usuario = '$nombre', provincia = '$provincia', email = '$email' where nombre_usuario = '$id'");
+	$_SESSION['user'] = $nombre;
+
 
 }
 
