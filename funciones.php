@@ -1,6 +1,6 @@
 <?php
 
-define("servidor", true);
+define("servidor", false);
 
 function imprimir_piloto($foto, $numero, $nombre, $equipo) {
 	return "<div class='pilot'><div class='bloque'><a href='piloto.php?n=$numero'><img src='$foto' /></a><br /><a href='piloto.php?n=$numero'>$nombre</a> <br />$equipo</div></div>";
@@ -85,6 +85,45 @@ function imprimir_equipo_personal($numEquipo, $nombre, $fundacion, $campeonatos,
          </table>
         </td>
         <td id="col_img"> <img src="<?php echo $coche; ?>" /><a href="javascript:;" id="equipo_btn"><?php echo $nombre; ?></a></td>
+        </tr>
+    </table>
+    
+    <?php ;
+	
+	return $retorno;
+	
+}
+
+function imprimir_carrera($numCarrera, $nombre, $fecha, $img1, $img2) {
+
+	return "<div class='carrera'><a href='carrera.php?n=$numCarrera' class='carrera_header'><span class='titulo_carrera'>$nombre</span><span class='fecha_carrera'>$fecha</span></a><a href='carrera.php?n=$numCarrera'><img src='$img1' alt='' /></a><a href='carrera.php?n=$numCarrera'><img src='$img2' alt='' /></a></div>";
+
+}
+
+function imprimir_carrera_personal($granPremio, $fecha, $circuito, $vueltas, $distancia, $foto) {
+	
+	$retorno = ''?>
+    <table id="t_piloto">
+    	<tr><td>
+    	<table>
+            <tr>
+                <td colspan="2"><h2><?php echo $granPremio; ?></h2></td>
+            </tr>            
+            <tr>
+                <td>Circuito</td><td><?php echo $circuito; ?></td>
+            </tr>
+            <tr>
+                <td>N. de vueltas</td><td><?php echo $vueltas; ?></td>
+            </tr>
+            <tr>
+                <td>Distancia</td><td><?php echo $distancia; ?></td>
+            </tr>
+            <tr>
+                <td>Fecha</td><td><?php echo $fecha; ?></td>
+            </tr>
+         </table>
+        </td>
+        <td id="col_img_carrera"><img src="<?php echo $foto; ?>" /></td>
         </tr>
     </table>
     
