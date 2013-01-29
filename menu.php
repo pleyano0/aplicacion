@@ -4,7 +4,7 @@
 <li><a href="./">Inicio</a></li>
 <li><a href="p_clasif.php">Clasificación de pilotos</a></li>
 <li><a href="e_clasif.php">Clasificación de equipos</a></li>
-<li><a href="index.php">Carreras</a></li>
+<li><a href="carreras.php">Carreras</a></li>
 <?php if (superusuario()): ?>
 <li><a href="admin.php">Administración</a></li>
 <?php endif; ?>

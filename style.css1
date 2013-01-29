@@ -57,7 +57,8 @@ body {margin: 0; padding: 0;background: url(images/back.jpg) center top no-repea
 #t_piloto {	width: 100%;	background: white;	font-size: 0.8em; border-collapse: collapse;}
 #t_piloto td {padding: 2px 10px; vertical-align: top;}
 #t_piloto tr #col_img { width: 295px; margin: 0; padding: 0;}
-#t_piloto tr #col_img img { display:block; margin: 0; padding: 0;}
+#t_piloto tr #col_img_carrera { width: 260px; margin: 0; padding: 0;}
+#t_piloto tr #col_img img, #t_piloto tr #col_img_carrera img { display:block; margin: 0; padding: 0;}
 #t_piloto #piloto_btn { display: block; background: url(images/driver_btn.gif); height: 40px; font-weight: bold; padding: 10px 15px; color: white; text-decoration: none; font-size: 1.3em;}
 #t_piloto #equipo_btn { display: block; height: 40px; font-weight: bold; padding: 10px 15px; color: white; text-decoration: none; font-size: 1.3em; background: url(images/team_btn.gif); }
 #t_piloto #piloto_btn:hover, #t_piloto #equipo_btn:hover { background-position:  0 -60px; }
@@ -102,6 +103,14 @@ body {margin: 0; padding: 0;background: url(images/back.jpg) center top no-repea
 #admin_menu ul li {padding-left: 20px;}
 .admin_insert, .admin_edit {padding-left: 0 !important; line-height: 30px; padding-top: 5px;}
 #admin_panel div {display: none; }
+
+.carrera { clear: both; background: rgba(255,255,255,1); margin-bottom: 10px;}
+.carrera .carrera_header {display: block; background: url(images/carrera_header.jpg) top; line-height: 35px; padding: 0 20px; text-transform: uppercase; color: white; overflow: auto;}
+.carrera:hover .carrera_header {background-position: bottom};
+.carrera .carrera_header .titulo_carrera {float: left;}
+.carrera .carrera_header .fecha_carrera {float: right;}
+.carrera img {clear: left; display: inline-block;}
+.carrera img[src^='images/carreras/flag'] { border-left: 1px white solid;}
 
 ul.bjqs{position:relative; list-style:none;padding:0;margin:0;overflow:hidden; display:none;}
 li.bjqs-slide{position:absolute; display:none;}
