@@ -21,9 +21,7 @@ Crear aplicación lo más completa posible:
 TO-DO:
 
 - registrado
-	- Gestión de membresía (cambio de contraseña, correo electrónico...)
-	- impresión en PDF del piloto
-	- Ver un resumen de las carreras y la puntuación y clasifación de cada piloto e impresión en PDF
+	- impresión en PDF del pilotoimpresión en PDF
 - administrador
 	- CMS
 	- Gestión de pilotos
@@ -33,4 +31,4 @@ TO-DO:
 	- Tamaño / Dimensiones / Formato avatar
 	- Formulario de registro / login
 - otros
-	- Detalle de equipos con conexión a base de datos
+	- Modificar consultas para las carreras en admin_process.php

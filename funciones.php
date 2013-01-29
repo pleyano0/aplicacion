@@ -1,6 +1,6 @@
 <?php
 
-define("servidor", true);
+define("servidor", false);
 
 function imprimir_piloto($foto, $numero, $nombre, $equipo) {
 	return "<div class='pilot'><div class='bloque'><a href='piloto.php?n=$numero'><img src='$foto' /></a><br /><a href='piloto.php?n=$numero'>$nombre</a> <br />$equipo</div></div>";
@@ -51,17 +51,63 @@ function imprimir_piloto_personal($numPiloto, $nombre, $fNacimiento, $nacionalid
             <tr>
                 <td>Número de piloto</td><td><?php echo $numPiloto; ?></td>
             </tr>
+            <tr>
+                <td colspan="2"><br /><br /><a href="libs/default.php?n=<?php echo $numPiloto; ?>">Imprimir</a></td>
+            </tr>
          </table>
         </td>
         <td id="col_img"> <img src="<?php echo $fPersonal; ?>" /><a href="javascript:;" id="piloto_btn"><?php echo $nombre; ?></a></td>
         </tr>
     </table>
-    
     <?php ;
 	
 	return $retorno;
 	
 }
+
+function imprimir_piloto_pdf($numPiloto, $nombre, $fNacimiento, $nacionalidad, $gpDisputados, $puntosConseguidos, $campeonatos, $puntosActuales, $nombreEquipo, $fPersonal) {
+	
+	$retorno = ''?>
+    <h1><?php echo $nombre; ?></h1>
+    <table id="t_piloto">
+    	<tr>
+        <td><img src="<?php echo $fPersonal; ?>" /></td>
+        <td>
+    	<table>      
+            <tr>
+                <td>Equipo</td><td><?php echo $nombreEquipo; ?></td>
+            </tr>
+            <tr>
+                <td>Nacionalidad</td><td><?php echo $nacionalidad; ?></td>
+            </tr>
+            <tr>
+                <td>Puntos totales</td><td><?php echo $puntosConseguidos; ?></td>
+            </tr>
+            <tr>
+                <td>Puntos actuales</td><td><?php echo $puntosActuales; ?></td>
+            </tr>
+            <tr>
+                <td>Grandes Premios disputados</td><td><?php echo $gpDisputados; ?></td>
+            </tr>
+            <tr>
+                <td>Campeonatos Ganados</td><td><?php echo $campeonatos; ?></td>
+            </tr>
+            <tr>
+                <td>Fecha de nacimiento</td><td><?php echo $fNacimiento; ?></td>
+            </tr>
+            <tr>
+                <td>N&uacute;mero de piloto</td><td><?php echo $numPiloto; ?></td>
+            </tr>
+         </table>
+        </td>
+        </tr>
+    </table>
+    <?php ;
+	
+	return $retorno;
+	
+}
+
 
 
 function imprimir_equipo_personal($numEquipo, $nombre, $fundacion, $campeonatos, $coche, $puntos) {
@@ -172,8 +218,8 @@ function conectar($server,$db)
 {
     try 
     {
-		$Cnx = new PDO("sqlsrv:server=$server ; Database=$db");
-       // $Cnx = new PDO('mysql:host='.$server.';dbname='.$db, 'root', 'toor');
+		// $Cnx = new PDO("sqlsrv:server=$server ; Database=$db");
+       $Cnx = new PDO('mysql:host='.$server.';dbname='.$db, 'root', 'toor');
         return($Cnx);
     } 
     catch (PDOException $ex) 
@@ -188,8 +234,8 @@ function sqlReader($sentencia)
 	$lector;
 	try
 	{	
-		$miCnx=conectar("(local)","MundialF1"); // MICNX = TIPO PDO
-		//$miCnx=conectar("127.0.0.1","MundialF1"); // MICNX = TIPO PDO
+		//$miCnx=conectar("(local)","MundialF1"); // MICNX = TIPO PDO
+		$miCnx=conectar("127.0.0.1","MundialF1"); // MICNX = TIPO PDO
 		$lector=$miCnx->query($sentencia);
 		if ($lector) $lector = $lector->fetchAll();
 	}
@@ -206,8 +252,8 @@ function sqlWriter($sentencia)
 	$lector;
 	try
 	{	
-		$miCnx=conectar("(local)","MundialF1"); // MICNX = TIPO PDO
-	//	$miCnx=conectar("127.0.0.1","MundialF1"); // MICNX = TIPO PDO
+	//		$miCnx=conectar("(local)","MundialF1"); // MICNX = TIPO PDO
+	$miCnx=conectar("127.0.0.1","MundialF1"); // MICNX = TIPO PDO
 		$lector=$miCnx->prepare($sentencia);
 		$lector->execute();
 	}

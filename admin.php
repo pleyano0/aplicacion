@@ -27,33 +27,36 @@ include("header.php");
 <div id="admin_menu">
 <ul>
 	<li class="admin_insert">Inserciones:</li>
-	<li>Carrera</li>
-	<li>Usuario</li>
-	<li>Piloto</li>
-	<li>Equipo</li>
+	<li><a href="javascript:cambiar(0);">Carrera</a></li>
+	<li><a href="javascript:cambiar(1);">Usuario</a></li>
+	<li><a href="javascript:cambiar(2);">Piloto</a></li>
+	<li><a href="javascript:cambiar(3);">Equipo</a></li>
     <li class="admin_edit">Ediciones:</li>
-	<li>Carrera</li>
-	<li>Usuario</li>
-	<li>Piloto</li>
-	<li>Equipo</li>
+	<li><a href="javascript:cambiar(4);">Carrera</a></li>
+	<li><a href="javascript:cambiar(5);">Usuario</a></li>
+	<li><a href="javascript:cambiar(6);">Piloto</a></li>
+	<li><a href="javascript:cambiar(7);">Equipo</a></li>
 </ul>
 </div>
 <div id="admin_panel">
-<div id="modificar_usuario">
-    Nombre de usuario: <input type="text" id="txt_usuario" />
-    <input type="button" onclick="consultar()" value="consultar" />
+<div id="insertar_carrera">
+    Id. carrera: <input type="text" id="txt_carrera0" />
     <br />
-    Email: <input type="text" id="txt_email" />
+    Id. piloto: <input type="text" id="txt_piloto0" />
     <br />
-    Provincia: <input type="text" id="txt_provincia" />
+    Posicion inicial: <input type="text" id="txt_posini0" />
     <br />
-    Sexo <input type="text" id="txt_sexo" />
-    <br /><input type="button" onclick="actualizar()" value="actualizar" />	
+    Posicion final: <input type="text" id="txt_posfin0" />
+    <br />
+    Mejor tiempo: <input type="text" id="txt_mejortiempo0" />
+    <br />
+    Vueltas: <input type="text" id="txt_vueltas0" />
+    <br />
 </div>
 <div id="insertar_usuario">
     Nombre de usuario: <input type="text" id="txt_usuario1" />
     <br />
-    Contraseña: <input type="text" id="txt_contrasena1" />
+    Contraseña: <input type="password" id="txt_contrasena1" />
     <br />
     Email: <input type="text" id="txt_email1" />
     <br />
@@ -64,7 +67,44 @@ include("header.php");
     Sexo: <input type="text" id="txt_sexo1" />
     <br />
     Avatar: <input type="text" id="txt_avatar1" />
-    <br /><input type="button" onclick="insertar()" value="Insertar" />	
+    <br /><input type="button" onclick="insertar_usuario()" value="Insertar" />	
+</div>
+<div id="insertar_piloto">
+</div>
+<div id="insertar_equipo">
+</div>
+<div id="modificar_carrera">
+    Id. carrera: <input type="text" id="txt_carrera1" /><input type="button" onclick="consultar_carrera()" value="consultar" />
+    <br />
+    Id. piloto: <input type="text" id="txt_piloto1" />
+    <br />
+    Posicion inicial: <input type="text" id="txt_posini1" />
+    <br />
+    Posicion final: <input type="text" id="txt_posfin1" />
+    <br />
+    Mejor tiempo: <input type="text" id="txt_mejortiempo1" />
+    <br />
+    Vueltas: <input type="text" id="txt_vueltas1" />
+    <br />
+</div>
+<div id="modificar_usuario">
+    Nombre de usuario: <input type="text" id="txt_usuario" />
+    <input type="button" onclick="consultar()" value="consultar" />
+    <br />
+    Email: <input type="text" id="txt_email" />
+    <br />
+    Rol: <input type="text" id="txt_rol" />
+    <br />
+    Provincia: <input type="text" id="txt_provincia" />
+    <br />
+    Sexo: <input type="text" id="txt_sexo" />
+    <br />
+    Avatar: <input type="text" id="txt_avatar" />
+    <br /><input type="button" onclick="actualizar_usuario()" value="actualizar" />	
+</div>
+<div id="modificar_piloto">
+</div>
+<div id="modificar_equipo">
 </div>
 </div>
 </div>

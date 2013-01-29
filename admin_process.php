@@ -4,14 +4,17 @@ switch ($_GET['action']) {
 	case 'modificar_usuario':
 		$user = $_GET['usuario'];
 		$datos = sqlReader("select * from usuarios where nombre_usuario = '$user'");
-		echo $datos[0]['email'] . "%%" . $datos[0]['provincia'] . "%%" . $datos[0]['sexo'];
+		echo $datos[0]['email'] . "%%" . $datos[0]['provincia'] . "%%" . $datos[0]['sexo'] . "%%" . $datos[0]['rol'] . "%%" . $datos[0]['avatar'];
 		break;
 	case 'actualizar_usuario':
 		$user = $_GET['usuario'];
 		$email = $_GET['email'];
 		$sexo = $_GET['sexo'];
 		$provincia = $_GET['provincia'];
-		$datos = sqlWriter("update usuarios set email = '$email', sexo = '$sexo', provincia = '$provincia' where nombre_usuario = '$user'");
+		$rol = $_GET['rol'];
+		$sexo = $_GET['sexo'];
+		$avatar = $_GET['avatar'];
+		$datos = sqlWriter("update usuarios set email = '$email', sexo = '$sexo', provincia = '$provincia', rol = '$rol', avatar = '$avatar', sexo = '$sexo' where nombre_usuario = '$user'");
 		break;
 	case 'insertar_usuario':
 		$user = $_GET['usuario'];
@@ -22,8 +25,21 @@ switch ($_GET['action']) {
 		$rol = $_GET['rol'];
 		$sexo = $_GET['sexo'];
 		$avatar = $_GET['avatar'];
-		print_r($_GET);
 		$datos = sqlWriter("insert into usuarios values (default, '$user', '$contrasena', '$email', '$rol', '$provincia', '$sexo', '$avatar')");
+		break;
+	case 'insertar_carrera':
+		$carrera = $_GET['carrera'];
+		$piloto = $_GET['piloto'];
+		$posini = $_GET['posini'];
+		$posfin = $_GET['posfin'];
+		$tiempo = $_GET['tiempo'];
+		$vueltas = $_GET['vueltas'];
+		$datos = sqlWriter("insert into usuarios values (default, '$user', '$contrasena', '$email', '$rol', '$provincia', '$sexo', '$avatar')");
+		break;
+	case 'consultar_carrera':
+		$user = $_GET['usuario'];
+		$datos = sqlReader("select * from usuarios where nombre_usuario = '$user'");
+		echo $datos[0]['email'] . "%%" . $datos[0]['provincia'] . "%%" . $datos[0]['sexo'] . "%%" . $datos[0]['rol'] . "%%" . $datos[0]['avatar'];
 		break;
 }
 
