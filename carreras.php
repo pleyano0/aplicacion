@@ -27,9 +27,9 @@ include("header.php");
 
 if (servidor) {
 
-	$lector1=sqlReader("select numPiloto, Pilotos.nombre as Pnombre, Teams.nombre as Tnombre, fcarne from Pilotos join Teams on Pilotos.claveTeam = Teams.claveTeam");
-	foreach ($lector1 as $tupla_piloto) {
-		echo imprimir_piloto("images/fcarne/".$tupla_piloto['fcarne'], $tupla_piloto['numPiloto'], $tupla_piloto['Pnombre'], $tupla_piloto['Tnombre']);
+	$lector1=sqlReader("select claveCarrera, granPremio, fecha, foto, bandera from Carreras");
+	foreach ($lector1 as $tupla_carrera) {
+		echo imprimir_carrera($tupla_carrera['claveCarrera'], $tupla_carrera['granPremio'], $tupla_carrera['fecha'], $tupla_carrera['foto'], $tupla_carrera['bandera']);
 	}
 } else {
 

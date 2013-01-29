@@ -29,10 +29,19 @@ include("header.php");
 # TRABAJANDO CON SERVIDOR
 
 if (servidor) {
-	$lector1=sqlReader("select numPiloto, Pilotos.nombre as Pnombre, Teams.nombre as Tnombre, fpersonal, nacionalidad, Pilotos.puntosActuales as PpuntosActuales, puntosConseguidos, gpDisputados, Pilotos.campeonatos as Pcampeonatos, CONVERT(varchar(10), fNacimiento, 103) as fecha from Pilotos join Teams on Pilotos.claveTeam = Teams.claveTeam");
-	foreach ($lector1 as $tupla_piloto) {
-		if ($tupla_piloto['numPiloto'] == $_GET['n'])
-			echo imprimir_piloto_personal($tupla_piloto['numPiloto'], $tupla_piloto['Pnombre'], $tupla_piloto['fecha'], $tupla_piloto['nacionalidad'], $tupla_piloto['gpDisputados'], $tupla_piloto['puntosConseguidos'], $tupla_piloto['Pcampeonatos'], $tupla_piloto['PpuntosActuales'], $tupla_piloto['Tnombre'], "images/fpersonal/".$tupla_piloto['fpersonal']);
+	$lector1=sqlReader("select claveCarrera, granPremio, circuito, fecha, foto, fpersonal, bandera, vueltas, distancia from Carreras");
+	foreach ($lector1 as $tupla_carrera) {
+		if ($tupla_carrera['claveCarrera'] == $_GET['n']) {
+			echo imprimir_carrera_personal($tupla_carrera['granPremio'],$tupla_carrera['fecha'], $tupla_carrera['circuito'], $tupla_carrera['vueltas'], $tupla_carrera['distancia'], $tupla_carrera['fpersonal']);
+			$lector2=sqlReader("select Pilotos.numPiloto as numPiloto, Resultados.claveCarrera as claveCarrera, Pilotos.nombre as nom, Pilotos.fpersonal as foto, Resultados.parrilla as parrilla, Resultados.vueltas as vueltas, Resultados.tiempo as tiempo, Resultados.posicion as posicion from Resultados join Pilotos on Pilotos.numPiloto = Resultados.numPiloto order by posicion");
+			echo "<div id='resultados_pilotos'>";
+			foreach ($lector2 as $piloto) {
+				if ($piloto['claveCarrera'] == $_GET['n']) {
+					echo imprimir_resultado($piloto['numPiloto'], $piloto['nom'], $piloto['parrilla'], $piloto['vueltas'], $piloto['tiempo'], $piloto['posicion'], $piloto['foto']);
+				}
+			}
+			echo "</div>";
+		}
 	}
 } else {
 	# TRABAJANDO SIN SERVIDOR

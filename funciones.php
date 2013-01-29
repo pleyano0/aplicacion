@@ -1,6 +1,6 @@
 <?php
 
-define("servidor", false);
+define("servidor", true);
 
 function imprimir_piloto($foto, $numero, $nombre, $equipo) {
 	return "<div class='pilot'><div class='bloque'><a href='piloto.php?n=$numero'><img src='$foto' /></a><br /><a href='piloto.php?n=$numero'>$nombre</a> <br />$equipo</div></div>";
@@ -128,6 +128,41 @@ function imprimir_carrera_personal($granPremio, $fecha, $circuito, $vueltas, $di
     </table>
     
     <?php ;
+	
+	return $retorno;
+	
+}
+
+function imprimir_resultado($numPiloto, $piloto, $parrilla, $vueltas, $tiempo, $posicion, $foto) {
+
+	$retorno = "" ?>
+	
+	<table class="resultado">
+		<tr><td>
+		<table>
+		<tr>
+			<td>Piloto </td><td> <?php echo $piloto; ?></td>
+		</tr>
+		<tr>
+			<td>Posicion </td><td> <?php echo $posicion; ?></td>
+		</tr>
+		<tr>
+			<td>Posicion de salida </td><td> <?php echo $parrilla; ?></td>
+		</tr>
+		<tr>
+			<td>Vueltas </td><td> <?php echo $vueltas; ?></td>
+		</tr>
+		<tr>
+			<td>Mejor tiempo </td><td> <?php echo $tiempo; ?></td>
+		</tr>
+		</table>
+		</td>
+		
+			<td class="foto" rowspan="5"><a href="piloto.php?n=<?php echo $numPiloto; ?>"><img src="images/fpersonal/<?php echo $foto; ?>" /></a></td>
+			</tr>
+	</table>
+	
+	<?php ;
 	
 	return $retorno;
 	

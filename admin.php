@@ -1,7 +1,7 @@
 <?php
 include_once("funciones.php");
 if (!superusuario()) {
-	header("Location: redirect.php?src=admin.php&errcode=3");
+	header("Location: redirect.php?errcode=3");
 } else {
 ?>
 

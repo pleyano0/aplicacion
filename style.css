@@ -105,12 +105,21 @@ body {margin: 0; padding: 0;background: url(images/back.jpg) center top no-repea
 #admin_panel div {display: none; }
 
 .carrera { clear: both; background: rgba(255,255,255,1); margin-bottom: 10px;}
-.carrera .carrera_header {display: block; background: url(images/carrera_header.jpg) top; line-height: 35px; padding: 0 20px; text-transform: uppercase; color: white; overflow: auto;}
+.carrera .carrera_header {display: block; background: url(images/header_carrera.jpg) top; line-height: 35px; padding: 0 20px; text-transform: uppercase; color: white; overflow: auto;}
 .carrera:hover .carrera_header {background-position: bottom};
 .carrera .carrera_header .titulo_carrera {float: left;}
 .carrera .carrera_header .fecha_carrera {float: right;}
 .carrera img {clear: left; display: inline-block;}
 .carrera img[src^='images/carreras/flag'] { border-left: 1px white solid;}
+
+#resultados_pilotos {padding-top: 30px;}
+.resultado { background: white; display: block; margin: 10px 0;  border-spacing: 0; border-collapse: collapse;}
+.resultado table  td{ width: 347px; padding: 5px 15px; font-size: 0.9em;}
+.resultado table  td:first-of-type{ width: 147px;}
+.resultado tr { margin: 0 ; padding: 0;}
+.resultado tr td {vertical-align: top;}
+.resultado tr .foto {width:200px;}
+.resultado tr .foto img { width: 200px; }
 
 ul.bjqs{position:relative; list-style:none;padding:0;margin:0;overflow:hidden; display:none;}
 li.bjqs-slide{position:absolute; display:none;}
