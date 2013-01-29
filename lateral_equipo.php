@@ -6,9 +6,9 @@
   # TRABAJANDO CON SERVIDOR
 
 if (servidor) {
-	$lector1=sqlReader("select claveTeam, clasif = ROW_NUMBER() OVER (order by puntos desc), equipo, puntos from Teams)");
+	$lector1=sqlReader("select claveTeam, clasif = ROW_NUMBER() OVER (order by puntosActuales desc), equipo, puntosActuales from Teams");
 	foreach ($lector1 as $tupla_equipo) {
-		echo imprimir_equipo_clasificacion($tupla_equipo['claveTeam'], str_pad($tupla_equipo['clasif'], 2, "0", STR_PAD_LEFT), $tupla_equipo['equipo'], $tupla_equipo['puntos']);
+		echo imprimir_equipo_clasificacion($tupla_equipo['claveTeam'], str_pad($tupla_equipo['clasif'], 2, "0", STR_PAD_LEFT), $tupla_equipo['equipo'], $tupla_equipo['puntosActuales']);
 	}
 } else {
 	# TRABAJANDO SIN SERVIDOR

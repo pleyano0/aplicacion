@@ -28,10 +28,10 @@ include("header.php");
 # TRABAJANDO CON SERVIDOR
 
 if (servidor) {
-	$lector1=sqlReader("select numPiloto, Pilotos.nombre as Pnombre, Teams.nombre as Tnombre, fpersonal, nacionalidad, Pilotos.puntosActuales as PpuntosActuales, puntosConseguidos, gpDisputados, Pilotos.campeonatos as Pcampeonatos, CONVERT(varchar(10), fNacimiento, 103) as fecha from Pilotos join Teams on Pilotos.claveTeam = Teams.claveTeam");
-	foreach ($lector1 as $tupla_piloto) {
-		if ($tupla_piloto['numPiloto'] == $_GET['n'])
-			echo imprimir_piloto_personal($tupla_piloto['numPiloto'], $tupla_piloto['Pnombre'], $tupla_piloto['fecha'], $tupla_piloto['nacionalidad'], $tupla_piloto['gpDisputados'], $tupla_piloto['puntosConseguidos'], $tupla_piloto['Pcampeonatos'], $tupla_piloto['PpuntosActuales'], $tupla_piloto['Tnombre'], "images/fpersonal/".$tupla_piloto['fpersonal']);
+	$lector1=sqlReader("select claveTeam, equipo, fundacion, campeonatos, puntosActuales, foto from Teams");
+	foreach ($lector1 as $tupla_equipo) {
+		if ($tupla_equipo['claveTeam'] == $_GET['n'])
+			echo imprimir_equipo_personal($tupla_equipo['claveTeam'], $tupla_equipo['equipo'], $tupla_equipo['fundacion'], $tupla_equipo['campeonatos'],  "images/tfoto/" . $tupla_equipo['foto'], $tupla_equipo['puntosActuales']);
 	}
 } else {
 	# TRABAJANDO SIN SERVIDOR
