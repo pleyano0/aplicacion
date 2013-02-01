@@ -29,17 +29,13 @@ include("header.php");
 	<li class="admin_insert">Inserciones:</li>
 	<li><a href="javascript:cambiar(0);">Carrera</a></li>
 	<li><a href="javascript:cambiar(1);">Usuario</a></li>
-	<li><a href="javascript:cambiar(2);">Piloto</a></li>
-	<li><a href="javascript:cambiar(3);">Equipo</a></li>
     <li class="admin_edit">Ediciones:</li>
-	<li><a href="javascript:cambiar(4);">Carrera</a></li>
-	<li><a href="javascript:cambiar(5);">Usuario</a></li>
-	<li><a href="javascript:cambiar(6);">Piloto</a></li>
-	<li><a href="javascript:cambiar(7);">Equipo</a></li>
+	<li><a href="javascript:cambiar(2);">Carrera</a></li>
+	<li><a href="javascript:cambiar(3);">Usuario</a></li>
 </ul>
 </div>
 <div id="admin_panel">
-<div id="insertar_carrera">
+<div id="insertar_carrera" style="display:block;">
     Id. carrera: <input type="text" id="txt_carrera0" />
     <br />
     Id. piloto: <input type="text" id="txt_piloto0" />
@@ -52,6 +48,7 @@ include("header.php");
     <br />
     Vueltas: <input type="text" id="txt_vueltas0" />
     <br />
+    <br /><input type="button" onclick="insertar_carrera()" value="Insertar" />	
 </div>
 <div id="insertar_usuario">
     Nombre de usuario: <input type="text" id="txt_usuario1" />
@@ -68,10 +65,6 @@ include("header.php");
     <br />
     Avatar: <input type="text" id="txt_avatar1" />
     <br /><input type="button" onclick="insertar_usuario()" value="Insertar" />	
-</div>
-<div id="insertar_piloto">
-</div>
-<div id="insertar_equipo">
 </div>
 <div id="modificar_carrera">
     Id. carrera: <input type="text" id="txt_carrera1" /><input type="button" onclick="consultar_carrera()" value="consultar" />
@@ -101,10 +94,6 @@ include("header.php");
     <br />
     Avatar: <input type="text" id="txt_avatar" />
     <br /><input type="button" onclick="actualizar_usuario()" value="actualizar" />	
-</div>
-<div id="modificar_piloto">
-</div>
-<div id="modificar_equipo">
 </div>
 </div>
 </div>

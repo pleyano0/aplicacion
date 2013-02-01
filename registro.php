@@ -12,6 +12,40 @@ if (autenticado()) {
 <title>Untitled Document</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 <script src="js/formulario.js"></script>
+<script>
+
+function validar() {
+
+	var validado = true;
+
+	if (document.getElementById('password').value != document.getElementById('password2').value) {
+		validado = false;
+		document.getElementById('password2').style.backgroundColor = "red";
+	} else {
+		document.getElementById('password2').style.backgroundColor = "#AEAEAE";
+	}
+	
+	if (!document.getElementById('email').value.match(/[\w-\.]{3,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/)) {
+		validado = false;
+		document.getElementById('email').style.backgroundColor = "red";
+	} else {
+		document.getElementById('email').style.backgroundColor = "#AEAEAE";
+	}
+	
+	if (document.getElementById('sexoH').checked == false && document.getElementById('sexoM').checked == false) {
+		validado = false;
+		document.getElementById('sexoH').style.backgroundColor = "red";
+		document.getElementById('sexoM').style.backgroundColor = "red";
+	} else {
+		document.getElementById('sexoH').style.backgroundColor = "white";
+		document.getElementById('sexoM').style.backgroundColor = "white";
+	}
+	
+	return validado;
+
+}
+
+</script>
 </head>
 
 <body>
@@ -23,7 +57,7 @@ include("header.php");
 <div id="contenedor">
 <?php include("menu.php"); ?>
 <div id="index_contenido">
-<form method="post" action="registro.php" id="register">
+<form method="post" action="registro.php" id="register" onsubmit="return validar()">
 
 <?php if (!isset($_POST['input_reg'])): ?>
 <h2>Formulario de registro</h2>
@@ -46,7 +80,7 @@ document.write("<option value='"+array_provincias[i]+"'>"+array_provincias[i]+"<
 </script>
 </select>
 </div>
-<div class="form_input"><label>Sexo: </label><input type="radio" value="H" name="sexo" /> H <input type="radio" value="M" name="sexo" /> M</div>
+<div class="form_input"><label>Sexo: </label><input type="radio" value="H" name="sexo" id="sexoH" /> H <input type="radio" value="M" name="sexo" id="sexoM"  /> M</div>
 
 
 </div>

@@ -64,7 +64,33 @@ function insertar_carrera() {
 	tb_vueltas = document.getElementById("txt_vueltas0");
 	
 	ajax = ajax_object();
-	ajax.open("GET", "admin_process.php?action=insertar_carrera&carrera="+tb_carrera.value+ "&piloto=" + tb_piloto.value + "&posini=" + tb_posini.value + "&posfin=" + tb_posfin.value + "&tiempo=" + tb_timepo.value + "&vueltas=" + tb_vueltas.value);
+	ajax.open("GET", "admin_process.php?action=insertar_carrera&carrera="+tb_carrera.value+ "&piloto=" + tb_piloto.value + "&posini=" + tb_posini.value + "&posfin=" + tb_posfin.value + "&tiempo=" + tb_tiempo.value + "&vueltas=" + tb_vueltas.value);
+	ajax.send(null);
+}
+
+function consultar_carrera() {
+	
+	tb_carrera = document.getElementById("txt_carrera1");
+	tb_piloto = document.getElementById("txt_piloto1");
+	tb_posini = document.getElementById("txt_posini1");
+	tb_posfin = document.getElementById("txt_posfin1");
+	tb_tiempo = document.getElementById("txt_mejortiempo1");
+	tb_vueltas = document.getElementById("txt_vueltas1");
+	
+	ajax = ajax_object();
+	ajax.open("GET", "admin_process.php?action=consultar_carrera&carrera="+tb_carrera.value + "&piloto=" + tb_piloto.value);
+	ajax.onreadystatechange = function() {
+		if (ajax.readyState == 4) {
+			var datos = ajax.responseText.split("%%");
+			tb_carrera.value = datos[0];
+			tb_piloto.value = datos[1];
+			tb_posini.value = datos[2];
+			tb_posfin.value = datos[3];
+			tb_tiempo.value = datos[4];
+			tb_vueltas.value = datos[4];
+		}
+	}	
+
 	ajax.send(null);
 }
 
@@ -76,28 +102,4 @@ function cambiar(n) {
 	divs[n].style.display = 'block';
 
 	
-}
-function consultar_carrera() {
-	
-	tb_carrera = document.getElementById("txt_carrera1");
-	tb_piloto = document.getElementById("txt_piloto1");
-	tb_posini= document.getElementById("txt_posini1");
-	tb_posfin = document.getElementById("txt_posfin1");
-	tb_tiempo = document.getElementById("txt_mejortiempo1");
-	tb_vueltas = document.getElementById("txt_vueltas1");
-	
-	ajax = ajax_object();
-	ajax.open("GET", "admin_process.php?action=consultar_carrera&carrera="+tb_carrera+"&piloto=" +tb_piloto.value);
-	ajax.onreadystatechange = function() {
-		if (ajax.readyState == 4) {
-			var datos = ajax.responseText.split("%%");
-			tb_email.value = datos[0];
-			tb_provincia.value = datos[1];
-			tb_sexo.value = datos[2];
-			tb_rol.value = datos[3];
-			tb_avatar.value = datos[4];
-		}
-	}	
-
-	ajax.send(null);
 }

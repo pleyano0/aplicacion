@@ -1,4 +1,4 @@
-Crear aplicación lo más completa posible:
+﻿Crear aplicación lo más completa posible:
 
 3 usuarios
 
@@ -20,15 +20,6 @@ Crear aplicación lo más completa posible:
 
 TO-DO:
 
-- registrado
-	- impresión en PDF del pilotoimpresión en PDF
-- administrador
-	- CMS
-	- Gestión de pilotos
-	- Añadir datos de carreras
-	- Subir imágenes y asociarlas con pilotos
 - validación
 	- Tamaño / Dimensiones / Formato avatar
 	- Formulario de registro / login
-- otros
-	- Modificar consultas para las carreras en admin_process.php
